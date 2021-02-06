@@ -1,0 +1,4 @@
+gcc -o go2wrapper.o -c go2wrapper.c
+gcc -shared -o go2wrapper.so  go2wrapper.o  -lgo2
+gcc -o testlib testlib.c -L/home/odroid/go2radio -l:go2wrapper.so
+sudo cp go2wrapper.so /usr/lib/
